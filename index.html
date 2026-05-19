@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моє Резюме - Лабораторна робота №4</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        body.day-theme {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        body.night-theme {
+            background-color: #1e1e2f;
+            color: #f4f4f9;
+        }
+        body.night-theme .card {
+            background-color: #2d2d44;
+            color: #f4f4f9;
+            border-color: #3d3d5c;
+        }
+        body.night-theme input, body.night-theme textarea {
+            background-color: #3d3d5c;
+            color: white;
+            border: 1px solid #555;
+        }
+
+        .theme-toggle-container {
+            text-align: right;
+            padding: 10px 20px;
+        }
+        .theme-btn {
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-weight: bold;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .form-section { margin-top: 20px; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+        }
+        .form-btn {
+            width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;
+        }
+        .form-btn:hover { background-color: #218838; }
+        .sys-info { margin-top: 10px; font-size: 11px; color: #10b981; font-family: monospace; word-break: break-all; }
+    </style>
+</head>
+<body class="day-theme"> <div class="theme-toggle-container">
+    <button id="themeToggleBtn" class="theme-btn">Змінити тему 🌓</button>
+</div>
+
+
+<header id="main-header">
+    <h1>Владислав Римський</h1>
+    <p>Junior Web Developer</p>
+</header>
+
+<main class="container">
+    
+    <section class="card">
+        <h2>Про мене</h2>
+        <p>Я студент, який вивчає сучасні технології веб-розробки.</p>
+    </section>
+
+    <section class="card">
+        <h2>Досвід роботи</h2>
+        <p>Стажер (2023 - зараз)</p>
+    </section>
+
+    <section class="card">
+        <h2>Навички</h2>
+        <ul class="skills-grid">
+            <li class="skill-tag">HTML5</li>
+            <li class="skill-tag">CSS3</li>
+            <li class="skill-tag">JavaScript</li>
+        </ul>
+    </section>
+
+    <section class="card form-section">
+        <h2>Зворотній зв'язок (Formspree)</h2>
+        
+        <form id="feedbackForm" action="https://formspree.io/f/mlgoaojz" method="POST" noValidate>
+            <div class="form-group">
+                <label for="userName">Ім'я</label>
+                <input type="text" id="userName" name="name">
+            </div>
+            <div class="form-group">
+                <label for="userEmail">Електронна пошта (Email)</label>
+                <input type="email" id="userEmail" name="email">
+            </div>
+            <div class="form-group">
+                <label for="userPhone">Телефон</label>
+                <input type="text" id="userPhone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="userMessage">Повідомлення</label>
+                <textarea id="userMessage" name="message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="form-btn">Надіслати на пошту</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 Всі права застережено</p>
+    <div class="sys-info">
+        Платформа (з localStorage): <span id="os-info">Завантаження...</span>
+    </div>
+</footer>
+
+<section class="card" style="margin-top: 20px; padding: 20px;">
+        <h2>Відгуки попередніх роботодавців</h2>
+        <div id="reviews-container" style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+            <p style="color: #888; font-style: italic;">Завантаження відгуків із сервера...</p>
+        </div>
+    </section>
+
+<script src="script.js"></script>
+</body>
+</html>
